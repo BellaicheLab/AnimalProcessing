@@ -1,0 +1,18 @@
+# ReadTheDocs configuration
+# https://docs.readthedocs.io/en/stable/config-file/v2.html
+
+version: 2
+
+build:
+  os: ubuntu-22.04  # RTD build server OS (not your local machine)
+  tools:
+    python: "3.10"
+
+sphinx:
+  configuration: docs/conf.py
+  fail_on_warning: true
+
+# No package install: conf.py puts src/ on sys.path and mocks the runtime deps.
+python:
+  install:
+    - requirements: docs/requirements.txt

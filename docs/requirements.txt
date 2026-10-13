@@ -1,0 +1,10 @@
+# Docs build deps — mirrors the [docs] extra in pyproject.toml.
+sphinx>=7.0,<9
+pydata-sphinx-theme>=0.15
+myst-parser>=2.0
+sphinx-copybutton>=0.5
+sphinx-design>=0.5
+nbsphinx>=0.9
+ipython>=8.0
+# numpy is the one runtime dep autodoc imports for real (not in autodoc_mock_imports).
+numpy>=1.25,<2

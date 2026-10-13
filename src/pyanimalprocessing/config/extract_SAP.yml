@@ -1,0 +1,49 @@
+---
+# This ymal script shows all the quantitied to extract from and SAP_folder + SAP_info combination
+TENSORS: # Quantities to extract From AOT - AOA
+  # Mandatory quantities
+  - xywh # starting point in x, y and width and height of boxsize
+  - AreaRatios # Ratio of signal in each box (determined by the mask)
+  - AreaRatios_VM # In some cases the arearatios are stored there instead
+  - AreaRatios_AOS # For the case of the polarity of Myosin 
+  - Overlap
+  # Optional
+  - EpsilonPIV  # deformation rate tensor obtained with PIV
+  - UPIV  # Velocity field obtained with PIV
+  - OmegaPIV  # Rotation obtained with PIV
+  - EpsilonCT # deformation rate tensor obtained using CT
+  - UCT # Velocity field obtained with CT
+  - OmegaCT # Rotation obtained with CT
+  - CDCad # Used to quantify cadherin polarity along the cell cortex (look for PTEN paper)
+  - CDMyo # Used to quantitfy Myosin polarity along the cell cortex (look for PTEN paper)
+  - CDtest # Used to quantify polarity of a test field (for debug purposes)
+  - EF # fusion rate tensor (evaluates the extent of fusion errors)
+  - EG # deformation rate tensor
+  - ED # division rate tensor
+  - EA # apoptosis rate tensor
+  - ER # rearrangement rate tensor
+  - ES # shrinkage rate tensor
+  - Coordinates # used to extract the reference point in the grid (will be used to rescale the quantities to the animal)
+  - FrameArray
+  - TimeArray
+  - Size
+  - ULCs
+
+METADATA: # Information obtained fom the SAP_info
+  # All information related to the timing of the movies
+  - startFrame # Frame from which we start the analysis
+  - finalFrame # Frame from which we end the analysis
+  - dt
+  - timeRef
+  - frameRef
+
+  # All information related to positioning of the animal (particularly important when doing averages
+  - yMid # Position of the midline
+  - scale1D # Number of pixels in 1 micron
+  - xFactor
+  - yFactor
+  - xyStart # This one will be spearated into xStart and yStart
+
+  # All information related to the experimental setup
+  - temperature
+  - signalName # Imaged channel names, e.g. {'Cad'} -> stored as the `channels` root attr

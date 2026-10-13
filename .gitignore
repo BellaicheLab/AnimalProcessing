@@ -1,0 +1,31 @@
+SAP_parameters.m
+MAP_parameters.m
+*.asv
+*.m~
+*.egg-info/
+notebooks/exploration/
+.vscode
+stderr.txt
+stdout.txt
+src/stderr.txt
+src/stdout.txt
+*.png
+!docs/_static/assets/*.png
+*.npy
+
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Sphinx documentation
+docs/_build/
+docs/api/_generated/
+docs/_static/_version.css
+
+# Atlas pipeline: track the gene-atlas parameter instances (override the global ignores above)
+!GEP_atlas/SAP_parameters.m
+!GEP_atlas/MAP_parameters.m
+docs/notebooks/
+notebooks/_work/

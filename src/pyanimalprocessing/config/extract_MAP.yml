@@ -1,0 +1,57 @@
+---
+# This ymal script shows all the quantitied to extract from a folder containing averages (AOA or DBA typically)
+# For this to work, you need to point to a folder containing all averages folder (AOA or DBA) in a folder at the top level
+TENSORS: # Quantities to extract From AOA - DBA
+  # Mandatory quantities
+  - xywh # starting point in x, y and width and height of boxsize
+  - AreaRatios # Ratio of signal in each box (determined by the mask)
+  - Overlap
+  - Macrocaetes
+  # Optional
+  - EpsilonPIV # deformation rate tensor obtained with PIV
+  - UPIV # Velocity field obtained with PIV
+  - OmegaPIV # Rotation obtained with PIV
+  - EF # fusion rate tensor (evaluates the extent of fusion errors)
+  - EG # deformation rate tensor
+  - ED # division rate tensor
+  - EA # apoptosis rate tensor
+  - ER # rearrangement rate tensor
+  - ES # shrinkage rate tensor
+  - EJ # cell flow tensor
+  - CDCad # Used to quantify cadherin polarity along the cell cortex (look for PTEN paper)
+  - CDMyo # Used to quantitfy Myosin polarity along the cell cortex (look for PTEN paper)
+  - CellArea
+  - Coordinates # used to extract the reference point in the grid (will be used to rescale the quantities to the animal)
+  - TimeArray
+  - FrameArray
+  - Size
+  - ULCs
+  - U # Velocity field
+  - Epsilon # deformation rate tensor
+  - CellIaniso # Anisotropy of the cell
+  - CellArea # Area of the cell
+  - dnD # Number of divisions
+  - dnA # Number of apoptosis
+  - nCoreRNs
+
+  # Add dND and dNA
+# For now, the quantities below are not extracted, as there is no SAP_info that describes multiple animals.
+# I leave it here in the eventuality where we might have to extract metadata from the MAP_parameters or somewhere else.
+# METADATA: # Information obtained fom the SAP_info
+
+#       # All information related to the timing of the movies
+#       - startFrame # Frame from which we start the analysis
+#       - finalFrame # Frame from which we end the analysis
+#       - dt
+#       - timeRef
+#       - frameRef
+
+#       # All information related to positioning of the animal (particularly important when doing averages
+#       - yMid # Position of the midline
+#       - scale1D # Number of pixels in 1 micron
+#       - xFactor
+#       - yFactor
+#       - xyStart # This one will be spearated into xStart and yStart
+
+#       # All information related to the experimental setup
+#       - temperature

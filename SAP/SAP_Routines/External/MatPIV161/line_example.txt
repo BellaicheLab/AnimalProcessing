@@ -1,0 +1,1 @@
+[x,y,u,v]=matpiv('crop00.tif','crop01.tif',[16 16 ; 8 8],1,0.5,'multin')
